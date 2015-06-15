@@ -3,7 +3,6 @@ var chalk = require('chalk')
 var argv = require('yargs').argv
 var fs = require('fs')
 var async = require('async')
-var status = require('cli-status')
 var ansi = require('ansi')
   , cursor = ansi(process.stdout)
 var i = 0
