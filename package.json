@@ -1,0 +1,27 @@
+{
+  "name": "lol",
+  "version": "0.0.1",
+  "description": "checks league of legends accounts",
+  "main": "listcheck.js",
+  "dependencies": {
+    "ansi": "^0.3.0",
+    "async": "^1.2.1",
+    "chalk": "^1.0.0",
+    "yargs": "^3.10.0",
+    "request": "^2.57.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/numbers11/lol"
+  },
+  "author": "",
+  "license": "wtfpl",
+  "bugs": {
+    "url": "https://github.com/numbers11/lol/issues"
+  },
+  "homepage": "https://github.com/numbers11/lol"
+}
