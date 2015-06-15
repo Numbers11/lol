@@ -16,7 +16,7 @@ var CheckAcc = require('./lolcheck' + argv.m + '.js')
 
 
 if (!argv.i || !argv.o || !argv.s) {
-	console.log('Usage: -i <inputfile> -o <outputfile> -s <server> [optional: -m <web/chat>]')
+	console.log('Usage: -i <inputfile> -o <outputfile> -s <server> [optional: -m <web/chat> -t <timeout in ms> -p <parallel requests>]')
 	process.exit(1)
 }
 if (!fs.existsSync(argv.i) || fs.existsSync(argv.o)) {
