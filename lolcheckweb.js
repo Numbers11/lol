@@ -1,9 +1,29 @@
 module.exports = CheckAcc
+
 //console.log('web module loaded')
+//taken from https://github.com/thelaw44/lolrtmpsclient
+var servers = {
+    "na":  "https://lq.na2.lol.riotgames.com",
+    "euw": "https://lq.euw1.lol.riotgames.com",
+    "eun": "https://lq.eun1.lol.riotgames.com",
+    "kr":  "https://lq.kr.lol.riotgames.com",
+    "br":  "https://lq.br.lol.riotgames.com",
+    "tr":  "https://lq.tr.lol.riotgames.com",
+    "ru":  "https://lq.ru.lol.riotgames.com",
+    "lan": "https://lq.la1.lol.riotgames.com",
+    "las": "https://lq.la2.lol.riotgames.com",
+    "oce": "https://lq.oc1.lol.riotgames.com",
+    "pbe": "https://lq.pbe1.lol.riotgames.com",
+    "sg":  "https://lq.lol.garenanow.com",
+    "tw":  "https://loginqueuetw.lol.garenanow.com",
+    "th":  "https://lqth.lol.garenanow.com",
+   	"ph":  "https://lqph.lol.garenanow.com",
+    "vn":  "https://lqvn.lol.garenanow.com",
+}
 var request = require('request')
 function CheckAcc(username, pass, server, cb) {	
 	request({
-	    url: 'https://lq.' + server + '1.lol.riotgames.com/login-queue/rest/queues/lol/authenticate', 
+	    url: servers[server] + '/login-queue/rest/queues/lol/authenticate', 
 	    method: 'POST',
 	    headers: {
     		'User-Agent': 'Mozilla/5.0 (Windows; U; en-US) AppleWebKit/533.19.4 (KHTML, like Gecko) AdobeAIR/3.7',
@@ -15,8 +35,9 @@ function CheckAcc(username, pass, server, cb) {
 	}, function(error, response, body){
 	    if(error) {
       		cb(false, "error")
+//			  console.log(error)
 	    } else {
-		//console.log(body)
+//		console.log(body)
 		//console.log(username + ' - ' + pass + ' + ' + response.statusCode + ' + ' + (body.indexOf("attempt_rate_too_fast") != -1))
 	        //console.log(response.statusCode, body)
 			if (response.statusCode == 200) {
